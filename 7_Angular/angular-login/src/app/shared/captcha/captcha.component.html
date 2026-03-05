@@ -1,0 +1,9 @@
+<div class="captcha-box">
+  <p>Confirme que você não é um robô:</p>
+  <label>{{ firstNumber() }} + {{ secondNumber() }} = ?</label>
+  <div class="captcha-actions">
+    <input type="number" [formControl]="answerControl" placeholder="Resposta" />
+    <button type="button" (click)="verify()">Validar Captcha</button>
+    <button type="button" class="secondary" (click)="refresh()">Novo desafio</button>
+  </div>
+</div>
