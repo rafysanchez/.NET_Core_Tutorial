@@ -1,0 +1,31 @@
+.captcha-box {
+  display: grid;
+  gap: 0.5rem;
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  label {
+    font-weight: 700;
+    color: #0f172a;
+  }
+}
+
+.captcha-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  input {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  button.secondary {
+    background-color: #e2e8f0;
+    color: #1e293b;
+  }
+}

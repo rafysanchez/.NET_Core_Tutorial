@@ -1,0 +1,26 @@
+<section class="login-page">
+  <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-card">
+    <h1>Portal Administrativo</h1>
+    <p class="subtitle">Use <strong>admin/admin</strong> para entrar.</p>
+
+    <label for="username">Usuário</label>
+    <input id="username" type="text" formControlName="username" placeholder="Digite seu usuário" />
+    @if (loginForm.controls.username.touched && loginForm.controls.username.invalid) {
+      <small>Usuário obrigatório (mínimo 3 caracteres).</small>
+    }
+
+    <label for="password">Senha</label>
+    <input id="password" type="password" formControlName="password" placeholder="Digite sua senha" />
+    @if (loginForm.controls.password.touched && loginForm.controls.password.invalid) {
+      <small>Senha obrigatória (mínimo 3 caracteres).</small>
+    }
+
+    <app-captcha (solved)="onCaptchaResult($event)" />
+
+    @if (errorMessage()) {
+      <p class="error">{{ errorMessage() }}</p>
+    }
+
+    <button type="submit">Entrar</button>
+  </form>
+</section>
